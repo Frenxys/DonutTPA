@@ -1,0 +1,76 @@
+# NA - TPA plugin by Enea (github.com/Frenxys)
+# Based on DonutTpa v13 by SqidgeonStudios (https://modrinth.com/plugin/tpa-donut)
+name: NA
+version: '1.0'
+main: github.io.Frenxys.Main
+author: Enea
+website: https://github.com/Frenxys
+description: TPA plugin based on DonutTpa v13 by SqidgeonStudios
+api-version: '1.21'
+# The TPA engine uses the Bukkit scheduler (not Folia-safe)
+folia-supported: false
+
+softdepend:
+  - LuckPerms
+
+commands:
+  tpa:
+    permission: donuttpa.tpa
+  tpahere:
+    permission: donuttpa.tpahere
+  tpaccept:
+    permission: donuttpa.tpaccept
+  tpadeny:
+    permission: donuttpa.tpadeny
+  tpacancel:
+    permission: donuttpa.tpacancel
+  tpatoggle:
+    permission: donuttpa.tpatoggle
+  tpaheretoggle:
+    permission: donuttpa.tpaheretoggle
+  tpaauto:
+    permission: donuttpa.tpaauto
+    aliases: [ tpauto ]
+  tpaguitoggle:
+    permission: donuttpa.tpaguitoggle
+  tpareload:
+    permission: donuttpa.tpareload
+
+permissions:
+  donuttpa.admin:
+    default: op
+    children:
+      donuttpa.tpa: true
+      donuttpa.tpahere: true
+      donuttpa.tpaccept: true
+      donuttpa.tpadeny: true
+      donuttpa.tpacancel: true
+      donuttpa.tpatoggle: true
+      donuttpa.tpaheretoggle: true
+      donuttpa.tpaauto: true
+      donuttpa.tpaguitoggle: true
+      donuttpa.tpareload: true
+      donuttpa.tpa.bypass: true
+  donuttpa.tpa:
+    default: true
+  donuttpa.tpahere:
+    default: true
+  donuttpa.tpaccept:
+    default: true
+  donuttpa.tpadeny:
+    default: true
+  donuttpa.tpacancel:
+    default: true
+  donuttpa.tpatoggle:
+    default: true
+  donuttpa.tpaheretoggle:
+    default: true
+  donuttpa.tpaauto:
+    default: true
+  donuttpa.tpaguitoggle:
+    default: true
+  donuttpa.tpareload:
+    default: op
+  donuttpa.tpa.bypass:
+    description: Bypass TPA toggle restrictions
+    default: op

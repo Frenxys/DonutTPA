@@ -1,0 +1,41 @@
+sounds:
+  count-down:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_PLING
+    volume: 1.0
+    pitch: 1.2
+  teleport-done:
+    enabled: true
+    sound: ENTITY_ENDERMAN_TELEPORT
+    volume: 1.0
+    pitch: 1.2
+  world-click:
+    enabled: true
+    sound: ENTITY_CHICKEN_EGG
+    volume: 1.0
+    pitch: 1.0
+  player-head-click:
+    enabled: true
+    sound: ENTITY_CHICKEN_EGG
+    volume: 1.0
+    pitch: 1.0
+  fly-icon-click:
+    enabled: true
+    sound: ENTITY_CHICKEN_EGG
+    volume: 1.0
+    pitch: 1.0
+  accept/send:
+    enabled: true
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 1.0
+    pitch: 1.0
+  decline/cancel:
+    enabled: true
+    sound: ENTITY_VILLAGER_NO
+    volume: 1.0
+    pitch: 1.0
+  error:
+    enabled: true
+    sound: ENTITY_VILLAGER_NO
+    volume: 1.0
+    pitch: 0.8

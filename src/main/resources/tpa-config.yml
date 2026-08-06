@@ -1,0 +1,8 @@
+# DonutTpa - Main Configuration
+
+# How long (seconds) the teleport warmup countdown lasts.
+# Set to 0 for instant teleport.
+teleport-warmup: 3
+
+# How long (seconds) before a pending TPA request expires automatically.
+request-timeout: 60

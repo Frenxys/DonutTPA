@@ -1,0 +1,770 @@
+messages:
+  chat-hover-on-here: '&fClick here to &#00f986accept'
+  here: '&#00f986Here'
+  receive-request-hover: '&fClick here to &#00f986accept'
+  flight-gui-yes: '&fYes'
+  flight-gui-no: '&fNo'
+  accept-hover-message: '&fClick here to accept the teleport request'
+  receive-here-request-hover: '&fClick to accept the teleport here request'
+  config-reload:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fReloaded in &#00f986%ms%&fms."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  user-not-found:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fPlayer &#00f986%player%&f was not found online."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  self-teleport:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou cannot teleport to yourself."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  non-valid-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fThis teleport request does not exist."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  no-active-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fNo active teleport request found"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  teleport-countdown:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleporting in &#00f986%time%&fs"
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleporting in &#00f986%time%&fs"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  teleport-cancelled:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleportation cancelled."
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleportation cancelled."
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  no-requests-found:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fNo teleport requests to cancel."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  accepted-teleport:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou have accepted the teleport request."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  accepted-teleport-sender:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&f&#00f986%player%&f accepted your teleport request."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  receive-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - ""
+          - "&#00f986%player% &fsend you a teleport request"
+          - "&fClick &#00f986%here% &fto accept"
+          - ""
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  receive-here-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - ""
+          - "&#00f986%player% &fsend you a teleport here request"
+          - "&fClick &#00f986%here% &fto accept"
+          - ""
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  sent-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou sent &#00f986%player%&f a teleport request"
+      actionbar:
+        enabled: true
+        message:
+          - "&fSent teleport request to &#00f986%player%&f."
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  sent-here-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou sent &#00f986%player%&f a teleport here request"
+      actionbar:
+        enabled: true
+        message:
+          - "&fSent teleport here request to &#00f986%player%&f."
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  cancelled-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fDeclined teleport request from &#00f986%player%&f."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  cancelled-request-sender:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&f&#00f986%player%&f has declined your teleport request."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-toggle-on:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport requests are now enabled."
+      actionbar:
+        enabled: true
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-toggle-off:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport requests are now disabled."
+      actionbar:
+        enabled: true
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  block-tpa-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fThis player is not accepting teleport requests."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-here-toggle-on:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou are now accepting teleport here requests."
+      actionbar:
+        enabled: true
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-here-toggle-off:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou are no longer accepting teleport here requests."
+      actionbar:
+        enabled: true
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  block-tphere-request:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fThis player is not accepting teleport here requests."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  request-cooldown:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou must wait &#00f986%sec%&f before sending another request."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  request-limit-reached:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou already have an active teleport request."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  cancel-requests:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou have cancelled all your teleport requests."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  cancel-requests-failed:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou have no pending teleport requests to cancel."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-auto-enabled-actionbar:
+    module:
+      chat:
+        enabled: false
+        message:
+          - ""
+      actionbar:
+        enabled: true
+        message:
+          - "&aTPA Auto enabled"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-gui-toggle-on:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport request GUI is now enabled."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-gui-toggle-off:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport request GUI is now disabled."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-request-requester-actionbar:
+    module:
+      chat:
+        enabled: false
+        message:
+          - ""
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleport request from &#00f986%player%&f"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-here-request-requester-actionbar:
+    module:
+      chat:
+        enabled: false
+        message:
+          - ""
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleport here request from &#00f986%player%&f"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-auto-enabled:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport request auto is now enabled."
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleport request auto enabled"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-auto-disabled:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleport request auto is now disabled."
+      actionbar:
+        enabled: true
+        message:
+          - "&fTeleport request auto disabled"
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  no-permission:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou dont have permission for this command."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpa-usage:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fUsage: /tpa <player> - Send a teleport request to a player"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpahere-usage:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fUsage: /tpahere <player> - Send a teleport here request to a player"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tpaccept-usage:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fUsage: /tpaccept &#00f986<user>"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tp-success-self:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleported to &#00f986%player%&f."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tp-success-admin:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fTeleported &#00f986%player1%&f to &#00f986%player2%&f."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tp-teleported-by-admin:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fYou have been teleported to &#00f986%player%&f by an admin."
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  tp-usage:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&fUsage: /tp <player> or /tp <player> <target>"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
+  not-player:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "&cDieser Befehl kann nur von Spielern ausgeführt werden!"
+      actionbar:
+        enabled: false
+        message:
+          - ""
+      title:
+        enabled: false
+        message:
+          - ""
+      subtitle:
+        enabled: false
+        message:
+          - ""
