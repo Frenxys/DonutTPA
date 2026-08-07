@@ -56,6 +56,13 @@ public class TPAManager {
             msg.send(sender, "request-cooldown", Map.of("%sec%", String.valueOf(this.getRemainingCooldown(sender))));
             return;
         }
+        // Block the double /tpa: while the confirm GUI is open the META_SEND
+        // metadata is present. Without this check, a second /tpa re-opens the
+        // GUI and triggers the metadata race that leaves it clickable (dupe).
+        if (sender.hasMetadata(TPAGui.META_SEND)) {
+            msg.send(sender, "request-limit-reached", Map.of());
+            return;
+        }
         boolean targetAllows = type == TPARequest.Type.TPA
                 ? this.getSettings(target.getUniqueId()).isTpaEnabled()
                 : this.getSettings(target.getUniqueId()).isTpaHereEnabled();
@@ -97,6 +104,11 @@ public class TPAManager {
         TPARequest request = this.getLatestRequest(target.getUniqueId());
         if (request == null) {
             this.plugin.getMessageUtil().send(target, "no-active-request", Map.of());
+            return;
+        }
+        // Block double-opening the accept GUI (same race as the send GUI).
+        if (target.hasMetadata(TPAGui.META_ACCEPT)) {
+            this.plugin.getMessageUtil().send(target, "request-limit-reached", Map.of());
             return;
         }
         TPAGui.openAcceptGui(this.plugin, target, request);

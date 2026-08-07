@@ -30,16 +30,21 @@ public class GuiClickListener implements Listener {
             return;
         }
         Player player = (Player) humanEntity;
-        boolean hasSend = player.hasMetadata(TPAGui.META_SEND);
-        boolean hasAccept = player.hasMetadata(TPAGui.META_ACCEPT);
-        if (!hasSend && !hasAccept) {
-            return;
-        }
         String title = LegacyComponentSerializer.legacySection().serialize(event.getView().title());
         if (!TPAGui.isOurGui(this.plugin, title)) {
             return;
         }
+        // Always cancel clicks on our GUIs, even when the metadata is missing.
+        // Without this, a second /tpa while the GUI is open (which re-opens the
+        // GUI and triggers the metadata race) leaves the GUI with no metadata:
+        // clicks were not cancelled and the decorative icons (grass block,
+        // feather, ...) ended up in the inventory as loot (dupe).
         event.setCancelled(true);
+        boolean hasSend = player.hasMetadata(TPAGui.META_SEND);
+        boolean hasAccept = player.hasMetadata(TPAGui.META_ACCEPT);
+        if (!hasSend && !hasAccept) {
+            return; // Our GUI but state lost (race) → cancel and do nothing, no loot
+        }
         int slot = event.getRawSlot();
         if (hasSend) {
             List<MetadataValue> meta = player.getMetadata(TPAGui.META_SEND);
@@ -97,13 +102,15 @@ public class GuiClickListener implements Listener {
             return;
         }
         Player player = (Player) humanEntity;
-        this.plugin.getServer().getScheduler().runTaskLater(this.plugin.getHost(), () -> {
-            if (player.hasMetadata(TPAGui.META_SEND)) {
-                player.removeMetadata(TPAGui.META_SEND, this.plugin.getHost());
-            }
-            if (player.hasMetadata(TPAGui.META_ACCEPT)) {
-                player.removeMetadata(TPAGui.META_ACCEPT, this.plugin.getHost());
-            }
-        }, 1L);
+        // SYNCHRONOUS metadata removal: with runTaskLater(1L) the removal
+        // arrived one tick AFTER the setMetadata of a possible GUI re-open
+        // (e.g. a second /tpa while the GUI is already open), leaving the GUI
+        // open with no metadata and therefore clickable (dupe).
+        if (player.hasMetadata(TPAGui.META_SEND)) {
+            player.removeMetadata(TPAGui.META_SEND, this.plugin.getHost());
+        }
+        if (player.hasMetadata(TPAGui.META_ACCEPT)) {
+            player.removeMetadata(TPAGui.META_ACCEPT, this.plugin.getHost());
+        }
     }
 }
