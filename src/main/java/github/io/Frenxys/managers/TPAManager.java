@@ -63,9 +63,11 @@ public class TPAManager {
             msg.send(sender, "request-limit-reached", Map.of());
             return;
         }
-        boolean targetAllows = type == TPARequest.Type.TPA
-                ? this.getSettings(target.getUniqueId()).isTpaEnabled()
-                : this.getSettings(target.getUniqueId()).isTpaHereEnabled();
+        // /tpatoggle is the master switch: when disabled the player rejects
+        // both /tpa and /tpahere. /tpaheretoggle only affects /tpahere.
+        PlayerSettings targetSettings = this.getSettings(target.getUniqueId());
+        boolean targetAllows = targetSettings.isTpaEnabled()
+                && (type == TPARequest.Type.TPA || targetSettings.isTpaHereEnabled());
         if (!targetAllows && !this.plugin.getPermissionManager().hasPermission(sender, "donuttpa.tpa.bypass")) {
             msg.send(sender, type == TPARequest.Type.TPA ? "block-tpa-request" : "block-tphere-request", Map.of());
             return;
